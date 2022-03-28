@@ -40,7 +40,7 @@ const packageManager =
     ).name;
   }
 
-  const directory = path.resolve(__dirname, name);
+  const directory = path.resolve(process.cwd(), name);
 
   if (fs.existsSync(directory) && fs.readdirSync(directory).length > 0) {
     console.log(`⚙️ ${directory}`);
