@@ -1,0 +1,23 @@
+{
+  "name": "vity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "vite",
+    "vity",
+    "cli"
+  ],
+  "author": "napthedev",
+  "license": "MIT",
+  "bin": {
+    "vity": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^9.1.0",
+    "degit": "^2.8.4",
+    "inquirer": "^8.2.2",
+    "lodash.kebabcase": "^4.1.1"
+  }
+}
