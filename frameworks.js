@@ -170,7 +170,7 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/main.js"),
-        `import App from "./App.vue";\nimport { createApp } from "vue";\nimport router from "./router";\n\ncreateApp(App).use(router).mount("#app");\n`
+        `import App from "./App.vue";\nimport { createApp } from "vue";\nimport router from "./router";\nimport "./index.css";\n\ncreateApp(App).use(router).mount("#app");\n`
       );
     },
   },
@@ -208,7 +208,7 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/main.ts"),
-        `import App from "./App.vue";\nimport { createApp } from "vue";\nimport router from "./router";\n\ncreateApp(App).use(router).mount("#app");\n`
+        `import App from "./App.vue";\nimport { createApp } from "vue";\nimport router from "./router";\nimport "./index.css";\n\ncreateApp(App).use(router).mount("#app");\n`
       );
     },
   },
@@ -448,7 +448,9 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/test/App.test.js"),
-        `import App from "../App.vue";\nimport { mount } from "@vue/test-utils";\n\ntest("The title is visible", async () => {\n  expect(App).toBeTruthy();\n\n  const wrapper = mount(App);\n\n  expect(wrapper.text()).toContain("Generated with vity");\n});\n`
+        selected.includes("vue-router")
+          ? `import App from "../App.vue";\nimport { mount } from "@vue/test-utils";\nimport router from "../router";\n\ntest("The title is visible", async () => {\n  expect(App).toBeTruthy();\n\n  const wrapper = mount(App, { global: { plugins: [router] } });\n\n  expect(wrapper.text()).toContain("Generated with vity");\n});\n`
+          : `import App from "../App.vue";\nimport { mount } from "@vue/test-utils";\n\ntest("The title is visible", async () => {\n  expect(App).toBeTruthy();\n\n  const wrapper = mount(App);\n\n  expect(wrapper.text()).toContain("Generated with vity");\n});\n`
       );
 
       const packageJSON = JSON.parse(
@@ -481,7 +483,9 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/test/App.test.ts"),
-        `import App from "../App.vue";\nimport { mount } from "@vue/test-utils";\n\ntest("The title is visible", async () => {\n  expect(App).toBeTruthy();\n\n  const wrapper = mount(App);\n\n  expect(wrapper.text()).toContain("Generated with vity");\n});\n`
+        selected.includes("vue-router-ts")
+          ? `import App from "../App.vue";\nimport { mount } from "@vue/test-utils";\nimport router from "../router";\n\ntest("The title is visible", async () => {\n  expect(App).toBeTruthy();\n\n  const wrapper = mount(App, { global: { plugins: [router] } });\n\n  expect(wrapper.text()).toContain("Generated with vity");\n});\n`
+          : `import App from "../App.vue";\nimport { mount } from "@vue/test-utils";\n\ntest("The title is visible", async () => {\n  expect(App).toBeTruthy();\n\n  const wrapper = mount(App);\n\n  expect(wrapper.text()).toContain("Generated with vity");\n});\n`
       );
 
       const packageJSON = JSON.parse(
