@@ -1,6 +1,6 @@
 {
   "name": "vity",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI based on Vite to generate your project easily",
   "main": "./src/index.js",
   "scripts": {
