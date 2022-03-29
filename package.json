@@ -2,8 +2,10 @@
   "name": "vity",
   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node src"
+  },
   "keywords": [
     "vite",
     "vity",
@@ -12,7 +14,7 @@
   "author": "napthedev",
   "license": "MIT",
   "bin": {
-    "vity": "./index.js"
+    "vity": "./src/index.js"
   },
   "dependencies": {
     "commander": "^9.1.0",
