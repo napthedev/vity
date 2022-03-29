@@ -87,9 +87,10 @@ const packageManager =
   const emitter = degit(
     `vitejs/vite/packages/create-vite/template-${templateId}`,
     {
-      cache: true,
+      cache: false,
       force: true,
       verbose: true,
+      mode: "tar",
     }
   );
 
