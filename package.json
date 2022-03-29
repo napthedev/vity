@@ -11,6 +11,10 @@
     "vity",
     "cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/napthedev/vity.git"
+  },
   "author": "napthedev",
   "license": "MIT",
   "bin": {
