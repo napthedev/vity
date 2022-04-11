@@ -80,7 +80,7 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/main.jsx"),
-        `import App from "./App";\nimport { BrowserRouter } from "react-router-dom";\nimport ReactDOM from "react-dom";\nimport "./index.css";\n\nReactDOM.render(\n  <BrowserRouter>\n    <App />\n  </BrowserRouter>,\n  document.getElementById("root")\n);\n`
+        `import App from "./App";\nimport { BrowserRouter } from "react-router-dom";\nimport ReactDOM from "react-dom/client";\nimport "./index.css";\n\nReactDOM.createRoot(document.getElementById("root")).render(\n  <BrowserRouter>\n    <App />\n  </BrowserRouter>\n);\n`
       );
 
       fs.writeFileSync(
@@ -113,7 +113,7 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/main.tsx"),
-        `import App from "./App";\nimport { BrowserRouter } from "react-router-dom";\nimport ReactDOM from "react-dom";\nimport "./index.css";\n\nReactDOM.render(\n  <BrowserRouter>\n    <App />\n  </BrowserRouter>,\n  document.getElementById("root")\n);\n`
+        `import App from "./App";\nimport { BrowserRouter } from "react-router-dom";\nimport ReactDOM from "react-dom/client";\nimport "./index.css";\n\nReactDOM.createRoot(document.getElementById('root')!).render(\n  <BrowserRouter>\n    <App />\n  </BrowserRouter>\n)\n`
       );
 
       fs.writeFileSync(
