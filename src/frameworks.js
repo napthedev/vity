@@ -85,20 +85,20 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/App.jsx"),
-        `import { Route, Routes } from "react-router-dom";\n\nimport About from "./components/About";\nimport Home from "./components/Home";\n\nexport default function App() {\n  return (\n    <div>\n      <Routes>\n        <Route index element={<Home />}></Route>\n        <Route path="/about" element={<About />}></Route>\n      </Routes>\n      <p>Generated with vity</p>\n    </div>\n  );\n}\n`
+        `import { Route, Routes } from "react-router-dom";\n\nimport About from "./pages/About";\nimport Home from "./pages/Home";\n\nexport default function App() {\n  return (\n    <div>\n      <Routes>\n        <Route index element={<Home />}></Route>\n        <Route path="/about" element={<About />}></Route>\n      </Routes>\n      <p>Generated with vity</p>\n    </div>\n  );\n}\n`
       );
 
-      fs.mkdirSync(path.resolve(directory, "src/components"), {
+      fs.mkdirSync(path.resolve(directory, "src/pages"), {
         recursive: true,
       });
 
       fs.writeFileSync(
-        path.resolve(directory, "src/components/Home.jsx"),
+        path.resolve(directory, "src/pages/Home.jsx"),
         `import { Link } from "react-router-dom";\n\nexport default function Home() {\n  return (\n    <div>\n      <h1>Home</h1>\n      <Link to="/about">About</Link>\n    </div>\n  );\n}\n`
       );
 
       fs.writeFileSync(
-        path.resolve(directory, "src/components/About.jsx"),
+        path.resolve(directory, "src/pages/About.jsx"),
         `import { Link } from "react-router-dom";\n\nexport default function About() {\n  return (\n    <div>\n      <h1>About</h1>\n      <Link to="/">Home</Link>\n    </div>\n  );\n}\n`
       );
     },
@@ -118,20 +118,20 @@ const frameworks = {
 
       fs.writeFileSync(
         path.resolve(directory, "src/App.tsx"),
-        `import { Route, Routes } from "react-router-dom";\n\nimport About from "./components/About";\nimport Home from "./components/Home";\n\nexport default function App() {\n  return (\n    <div>\n      <Routes>\n        <Route index element={<Home />}></Route>\n        <Route path="/about" element={<About />}></Route>\n      </Routes>\n      <p>Generated with vity</p>\n    </div>\n  );\n}\n`
+        `import { Route, Routes } from "react-router-dom";\n\nimport About from "./pages/About";\nimport Home from "./pages/Home";\n\nexport default function App() {\n  return (\n    <div>\n      <Routes>\n        <Route index element={<Home />}></Route>\n        <Route path="/about" element={<About />}></Route>\n      </Routes>\n      <p>Generated with vity</p>\n    </div>\n  );\n}\n`
       );
 
-      fs.mkdirSync(path.resolve(directory, "src/components"), {
+      fs.mkdirSync(path.resolve(directory, "src/pages"), {
         recursive: true,
       });
 
       fs.writeFileSync(
-        path.resolve(directory, "src/components/Home.tsx"),
+        path.resolve(directory, "src/pages/Home.tsx"),
         `import { FC } from "react";\nimport { Link } from "react-router-dom";\n\nconst Home: FC = () => {\n  return (\n    <div>\n      <h1>Home</h1>\n      <Link to="/about">About</Link>\n    </div>\n  );\n};\n\nexport default Home;\n`
       );
 
       fs.writeFileSync(
-        path.resolve(directory, "src/components/About.tsx"),
+        path.resolve(directory, "src/pages/About.tsx"),
         `import { FC } from "react";\nimport { Link } from "react-router-dom";\n\nconst About: FC = () => {\n  return (\n    <div>\n      <h1>About</h1>\n      <Link to="/">Home</Link>\n    </div>\n  );\n};\n\nexport default About;\n`
       );
     },
